@@ -1,0 +1,579 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header-container {
+    height: 100;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 80px;
+    background-color: #F7F7F7;
+}
+
+.nav-container {
+    background-color: #E6E6E6;
+    border-radius: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+    position: relative;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-item {
+    color: #555;
+    text-decoration: none;
+    z-index: 3;
+    padding: 14px 24px;
+    border-radius: 30px;
+}
+
+.nav-item.active {
+    color: #000;
+    text-decoration: none;
+    background-color: #fff;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+}
+
+.nav-item.active::before {
+    /* to be implemented */
+    content: '';
+    /* width: 50px;
+    height: 50px; */
+    border-radius: 5px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.notif-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 12px 12px 9px 12px;
+    position: relative;
+}
+
+.notif-button {
+    background-color: transparent;
+    border-width: 0px;
+}
+
+.notif-button.show::after {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 5px;
+    background-color: red;
+    z-index: 5;
+    position: absolute;
+    top: 12px;
+    right: 16px;
+}
+
+.header-right-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.pfp-container {
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pfp-text {
+    color: #fff;
+    font-size: 12px;
+}
+
+.page-title-container {
+    padding: 50px 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.page-title {
+    font-size: 34px;
+    font-weight: 500;
+}
+
+.page-subtitle {
+    font-size: 30px;
+    font-weight: 400;
+    color: #555;
+}
+
+.auc-container {
+    background-color: #fff;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.auc-sidebar {
+    border-right-width: 1px;
+    border-right-color: rgba(0, 0, 0, 0.2);
+    border-right-style: inset;
+    height: 100%;
+    width: 30%;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.auc-sidebar-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.auc-sidebar-title-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 40px 0 80px;
+}
+
+.auc-sidebar-title {
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.auc-sidebar-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.auc-sidebar-list-item {
+    padding: 15px 40px 15px 80px;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+    border-bottom-style: inset;
+}
+
+.auc-sidebar-list-item.active {
+    background-color: #e6e6e6;
+    font-weight: 500;
+    position: relative;
+}
+
+.auc-sidebar-list-item.active::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: red;
+    position: absolute;
+    top: 19px;
+    left: 60px;
+}
+
+.auc-sidebar-button-container {
+    padding-left: 80px;
+    padding-right: 40px;
+}
+
+.auc-sidebar-button {
+    width: 100%;
+}
+
+.auc-page {
+    height: 100%;
+    width: 70%;
+}
+
+.asset-screen-container {
+    padding: 40px 80px;
+}
+
+.asset-screen-title-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.asset-screen-title {
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.asset-screen-form-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    padding-top: 40px;
+    gap: 80px;
+}
+
+.asset-screen-form-half-container {
+    width: 50%;
+}
+
+.asset-screen-form-subtitle {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+.asset-screen-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.asset-screen-input-label {
+    font-size: 18px;
+}
+
+.asset-screen-input-field {
+    padding: 12px 10px;
+    border-radius: 8px;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+.asset-screen-fields-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.reports-container {
+    height: 100vh;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+}
+
+.reports-content-container {
+    width: 50%;
+    height: 100%;
+    padding: 40px 40px 40px 80px;
+}
+
+.reports-title-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.reports-card-container {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.reports-pdf-container {
+    width: 50%;
+    overflow: scroll;
+    background-color: #e6e6e6;
+    padding: 40px 80px 40px 40px;
+}
+
+.reports-pdf-header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.reports-pdf-header-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.reports-pdf-text {
+    font-size: 18px;
+}
+
+.reports-pdf-title {
+    font-weight: 500;
+}
+
+.reports-pdf-page-indicator-container {
+    background-color: #CECECE;
+    padding: 4px 12px;
+    border-radius: 6px;
+}
+
+.report-card-container {
+    width: 100%;
+    height: 120px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    transition: background-color 0.5s;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.report-card-container:hover {
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+.report-card-container.active {
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.2);
+    border-style: solid;
+}
+
+.report-card-left {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.report-card-right {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 20px;
+}
+
+.report-card-title {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.report-card-info {
+    color: #555;
+}
+
+.report-card-username {
+    color: #EB3131;
+    font-weight: 500;
+}
+
+.report-card-title-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.dashboard-container {
+    background-color: #fff;
+    height: 100vh;
+    width: 100%;
+    padding: 40px 80px;
+}
+
+.dashboard-header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.dashboard-header-title-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dashboard-header-title {
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.dashboard-header-desc {
+    color: #555;
+}
+
+.dashboard-content-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 80px;
+}
+
+.dashboard-content-half-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 50%;
+}
+
+.calendar-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.calendar-header {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.calendar-title {
+    font-size: 22px;
+    font-weight: 500;
+    margin-right: 20px;
+}
+
+.calendar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 120px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.calendar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    width: 14.286%;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.calendar-item.active {
+    background-color: #EB3131;
+    box-shadow: 0px 0px 8px rgba(255, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.5)
+}
+
+.calendar-item.disabled {
+    background-color: #f7f7f7;
+}
+
+.calendar .calendar-item.disabled:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.calendar-item.simple {
+    transition: background-color 0.3s;
+}
+
+.monthly-overview-title {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.calendar-item.simple:hover {
+    background-color: rgba(255, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.calendar-item.active .calendar-item-day-letter,
+.calendar-item.active .calendar-item-day-number {
+    color: #fff;
+}
+
+.calendar-item-day-letter {
+    color: #999;
+}
+
+.calendar .calendar-item:last-child {
+    border-width: 0px;
+}
+
+.plant-files-title {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.plant-files-desc {
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.plant-files-card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.overview-card-container {
+    height: 180px;
+    width: 180px;
+    background-color: #fff;
+    border: 2px solid rgba(255, 0, 0, 0.4);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: scale 0.3s;
+}
+
+.overview-card-container:hover {
+    cursor: pointer;
+    scale: 1.05;
+}
+
+.overview-main-container {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.overview-number {
+    font-size: 50px;
+}
+
+.monthly-overview-card-row {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
