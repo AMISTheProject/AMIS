@@ -577,3 +577,30 @@
     flex-direction: row;
     gap: 40px;
 }
+
+.drafts-container {
+    height: 100vh;
+    width: 100%;
+    background-color: #fff;
+    padding: 0 80px;
+}
+
+.drafts-header {
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.drafts-header-text {
+    color: #444;
+}
+
+.drafts-header-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}

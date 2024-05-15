@@ -5,14 +5,9 @@ import { Header } from './components/Header';
 import { PageTitle } from './components/PageTitle';
 import { AUC } from './screens/AUC';
 import { Dashboard } from './screens/Dashboard';
+import { Drafts } from './screens/Drafts';
 import { AssetReports } from './screens/AssetReports';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-
-const Home = () => (
-  <div>
-    <h1>Hello</h1>
-  </div>
-);
 
 function App() {
   return (
@@ -39,7 +34,7 @@ function AppMain() {
       setSubtitle('June 2024');
     } else if(location.pathname == '/drafts') {
       setCurrentRoute('Drafts');
-      setSubtitle('');
+      setSubtitle('AUC History');
     }
   }, [location.pathname]);
 
@@ -53,7 +48,7 @@ function AppMain() {
             <Route path="/" element={<Dashboard />} />
             <Route path="/reports" element={<AssetReports />} />
             <Route path="/auc" element={<AUC />} />
-            <Route path="/drafts" element={<Home />} />
+            <Route path="/drafts" element={<Drafts />} />
           </Routes>
         </div>
   );
