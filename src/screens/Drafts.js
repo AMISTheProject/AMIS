@@ -3,6 +3,7 @@ import refreshIcon from '../assets/images/refresh-icon.svg';
 import binIcon from '../assets/images/bin-icon.svg';
 import arrow from '../assets/images/left-arrow-icon.png';
 import { Checkbox } from '../components/Checkbox';
+import { ListRowItem } from '../components/ListRowItem';
 import React, { useState } from 'react';
 
 export const Drafts = () => {
@@ -26,7 +27,11 @@ export const Drafts = () => {
             </div>
 
             <div className='drafts-content'>
-
+                <ListRowItem title='Assets Under Construction Report JU 2024 (1)' reason='Saved due to inaction' time='13:45'/>
+                <ListRowItem title='Assets Under Construction Report JU 2024' reason='Saved but not submitted' time='12:28'/>
+                <ListRowItem title='Assets Under Construction Report MA 2024' reason='Saved due to inaction' time='10:15'/>
+                <ListRowItem title='Assets Under Construction Report MA 2024' reason='Saved due to inaction' time='9:58'/>
+                <ListRowItem title='Assets Under Construction Report MA 2024' reason='Saved due to inaction' time='9:58'/>
             </div>
         </div>
     );
