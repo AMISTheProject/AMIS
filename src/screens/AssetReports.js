@@ -38,7 +38,7 @@ export const AssetReports = () => {
                     </div>
                 </div>
 
-                <img src={demoPdf} width='100%' height='800px'/>
+                <img src={demoPdf} width='105%' height='800px'/>
             </div>
         </div>
     );

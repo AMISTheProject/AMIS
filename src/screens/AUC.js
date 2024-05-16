@@ -2,7 +2,7 @@ import '../assets/style/styles.css';
 import { AssetScreen } from './AssetScreen';
 import { PrimaryButton } from '../components/PrimaryButton';
 
-import groupIcon from '../assets/images/group-by-icon.png';
+import groupIcon from '../assets/images/group-icon.png';
 
 export const AUC = () => {
     return (
@@ -11,7 +11,7 @@ export const AUC = () => {
                 <div className='auc-sidebar-main-content'>
                     <div className='auc-sidebar-title-container'>
                         <h3 className='auc-sidebar-title'>Assets</h3>
-                        <img src={groupIcon} alt='Group' width='25px' height='25px'/>
+                        <img class="auc-side-bar-group-icon" src={groupIcon} alt='Group' width='25px' height='25px'/>
                     </div>
 
                     <ul className='auc-sidebar-list'>

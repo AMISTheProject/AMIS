@@ -6,8 +6,8 @@ export const Calendar = () => {
         <div className='calendar-container'>
             <div className='calendar-header'>
                 <h4 className='calendar-title'>May 12-18</h4>
-                <img src={leftArrowIcon} width='30px' height='30px' />
-                <img src={leftArrowIcon} width='30px' height='30px' style={{transform: 'rotate(180deg)'}}/>
+                <img class="calendar-arrow" src={leftArrowIcon} width='30px' height='30px' />
+                <img class="calendar-arrow" src={leftArrowIcon} width='30px' height='30px' style={{transform: 'rotate(180deg)'}}/>
             </div>
 
             <div className='calendar'>

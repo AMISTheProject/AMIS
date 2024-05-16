@@ -16,7 +16,7 @@ export const Header = () => {
                 </ul>
             </div>
             <div className='header-right-container'>
-                <Notifications hasNotificiations={true}/>
+                <Notifications className="notifications" hasNotificiations={true}/>
                 <div className='pfp-container'>
                     <p className='pfp-text'>PlEng</p>
                 </div>

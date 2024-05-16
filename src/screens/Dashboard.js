@@ -3,6 +3,7 @@ import { PrimaryButton } from '../components/PrimaryButton';
 import { Calendar } from '../components/Calendar';
 import { ReportCard } from '../components/ReportCard';
 import { OverviewCard } from '../components/OverviewCard';
+import { CTTCard } from '../components/CTTCard';
 
 export const Dashboard = () => {
 
@@ -25,6 +26,9 @@ export const Dashboard = () => {
                         <h4 className='plant-files-title'>Plant's files</h4>
                         <p className='plant-files-desc'>Don't forget to take a look at some of the plant's most significant files!</p>
 
+                        <div className='capex-tracking-tool-card'>
+                            <CTTCard title='Capex Tracking Tool' date='1 May 2024' user='AMIS' />
+                        </div>
                         <div className='plant-files-card-container'>
                             <ReportCard title='Capex Tracking Tool' date='1 May 2024' user='AMIS' />
                         </div>

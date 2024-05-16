@@ -74,12 +74,27 @@
     border-radius: 30px;
     padding: 12px 12px 9px 12px;
     position: relative;
+    cursor: pointer;
 }
 
 .notif-button {
     background-color: transparent;
     border-width: 0px;
+    cursor: pointer;
 }
+
+.calendar-arrow {
+    cursor:pointer;
+}
+
+.calendar-arrow:hover {
+    opacity:0.9;
+}
+
+.calendar-arrow:active {
+    opacity:0.8;
+}
+
 
 .notif-button.show::after {
     content: '';
@@ -107,6 +122,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor:pointer;
 }
 
 .pfp-text {
@@ -201,11 +217,27 @@
     cursor: pointer;
 }
 
+.auc-side-bar-group-icon {
+    cursor: pointer;
+}
+
+.auc-side-bar-group-icon:hover {
+    opacity: 0.9;
+}
+
+.auc-side-bar-group-icon:active {
+    opacity: 0.8;
+}
+
 .auc-sidebar-list-item.active {
     background-color: #e6e6e6;
     font-weight: 500;
     position: relative;
     cursor: pointer;
+}
+
+.capex-tracking-tool-card {
+    margin-bottom: 20px;
 }
 
 .auc-sidebar-list-item.active::after {
@@ -355,6 +387,11 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+    transition: opacity 0.15s;
+}
+
+.reports-card-container:active {
+    opacity: 0.9;
 }
 
 .reports-pdf-container {
@@ -604,6 +641,11 @@
     flex-direction: column;
     gap: 20px;
     cursor: pointer;
+    transition: opacity 0.15s;
+}
+
+.plant-files-card-container:active {
+    opacity: 0.9;
 }
 
 .overview-card-container {
