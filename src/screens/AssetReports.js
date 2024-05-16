@@ -26,7 +26,7 @@ export const AssetReports = () => {
             <div className='reports-pdf-container'>
                 <div className='reports-pdf-header'>
                     <div className='reports-pdf-header-group'>
-                        <img src={navArrowIcon} alt={'Go to previous file'} width='30px' height='30px' />
+                        <img class="reports-preview-left-arrow" src={navArrowIcon} alt={'Go to previous file'} width='30px' height='30px' />
                         <span className='reports-pdf-text'><span className='reports-pdf-title'>April Asset Report</span> | Preview</span>
                     </div>
 
@@ -34,7 +34,7 @@ export const AssetReports = () => {
                         <div className='reports-pdf-page-indicator-container'>
                             <span className='reports-pdf-page-indicator-text'>1/24</span>
                         </div>
-                        <img src={navArrowIcon} alt={'Go to previous file'} width='30px' height='30px' style={{transform: 'rotate(180deg)'}}/>
+                        <img class="reports-preview-right-arrow" src={navArrowIcon} alt={'Go to previous file'} width='30px' height='30px' style={{transform: 'rotate(180deg)'}}/>
                     </div>
                 </div>
 
