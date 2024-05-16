@@ -27,11 +27,11 @@ export const Drafts = () => {
             </div>
 
             <div className='drafts-content'>
-                <ListRowItem title='Assets Under Construction Report JU 2024 (1)' reason='Saved due to inaction' time='13:45'/>
-                <ListRowItem title='Assets Under Construction Report JU 2024' reason='Saved but not submitted' time='12:28'/>
-                <ListRowItem title='Assets Under Construction Report MA 2024' reason='Saved due to inaction' time='10:15'/>
-                <ListRowItem title='Assets Under Construction Report MA 2024' reason='Saved due to inaction' time='9:58'/>
-                <ListRowItem title='Assets Under Construction Report MA 2024' reason='Saved due to inaction' time='9:58'/>
+                <ListRowItem class="draft-box" title='Assets Under Construction Report JU 2024 (1)' reason='Saved due to inaction' time='13:45'/>
+                <ListRowItem class="draft-box" title='Assets Under Construction Report JU 2024' reason='Saved but not submitted' time='12:28'/>
+                <ListRowItem class="draft-box" title='Assets Under Construction Report MA 2024' reason='Saved due to inaction' time='10:15'/>
+                <ListRowItem class="draft-box" title='Assets Under Construction Report MA 2024' reason='Saved due to inaction' time='9:58'/>
+                <ListRowItem class="draft-box" title='Assets Under Construction Report MA 2024' reason='Saved due to inaction' time='9:58'/>
             </div>
         </div>
     );
