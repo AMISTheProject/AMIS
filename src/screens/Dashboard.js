@@ -14,7 +14,7 @@ export const Dashboard = () => {
                     <p className='dashboard-header-desc'>Time to make progress on our projects!</p>
                 </div>
 
-                <PrimaryButton text='Quick custom report' />
+                <PrimaryButton className="dashboard-custom-report-button" text='Quick custom report' />
             </div>
 
             <div className='dashboard-content-container'>
