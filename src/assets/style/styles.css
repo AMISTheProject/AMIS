@@ -133,6 +133,19 @@
     color: #555;
 }
 
+.dashboard-custom-report-button {
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+
+.dashboard-custom-report-button:hover {
+    opacity: 0.8;
+}
+
+.dashboard-custom-report-button:active {
+    opacity: 0.6;
+}
+
 .auc-container {
     background-color: #fff;
     height: 100vh;
@@ -185,12 +198,14 @@
     border-bottom-width: 1px;
     border-bottom-color: rgba(0, 0, 0, 0.2);
     border-bottom-style: inset;
+    cursor: pointer;
 }
 
 .auc-sidebar-list-item.active {
     background-color: #e6e6e6;
     font-weight: 500;
     position: relative;
+    cursor: pointer;
 }
 
 .auc-sidebar-list-item.active::after {
@@ -211,6 +226,16 @@
 
 .auc-sidebar-button {
     width: 100%;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+
+.auc-sidebar-button:hover {
+    opacity: 0.8;
+}
+
+.auc-sidebar-button:active {
+    opacity: 0.6;
 }
 
 .auc-page {
@@ -227,6 +252,23 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+}
+
+.save-button {
+    cursor: pointer;
+}
+
+.auc-save-button {
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+
+.auc-save-button:hover {
+    opacity: 0.8;
+}
+
+.auc-save-button:active {
+    opacity: 0.6;
 }
 
 .asset-screen-title {
@@ -269,6 +311,15 @@
     border-width: 1px;
     border-color: rgba(0, 0, 0, 0.2);
     width: 100%;
+}
+
+.asset-screen-input-field-prefixed {
+    padding: 12px 10px;
+    border-radius: 8px;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    cursor: not-allowed;
 }
 
 .asset-screen-fields-container {
@@ -354,6 +405,7 @@
     transition: background-color 0.5s;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
 .report-card-container:hover {
@@ -401,6 +453,14 @@
     flex-direction: row;
     align-items: center;
     gap: 12px;
+}
+
+.reports-preview-left-arrow {
+    cursor: pointer;
+}
+
+.reports-preview-right-arrow {
+    cursor: pointer;
 }
 
 .dashboard-container {
@@ -543,6 +603,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    cursor: pointer;
 }
 
 .overview-card-container {
