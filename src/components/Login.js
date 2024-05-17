@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import logo from '../assets/images/amis-logo.png';
 import { PrimaryButton } from './PrimaryButton';
 import { Checkbox } from './Checkbox';
+import {DropdownList} from './DropdownList';
 
 export const Login = () => {
     const [isChecked, setIsChecked] = useState(false);
@@ -17,7 +18,7 @@ export const Login = () => {
                 <div className='login-form-container'>
                     <div className='asset-screen-input-container'>
                         <label className='asset-screen-input-label' for="role">Role</label>
-                        <input className='asset-screen-input-field' type="text" id="role" name="role" placeholder='Who are you?'></input>
+                        <DropdownList/>
                     </div>
 
                     <div className='asset-screen-input-container'>
