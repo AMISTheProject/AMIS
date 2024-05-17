@@ -8,6 +8,7 @@ import { Dashboard } from './screens/Dashboard';
 import { Drafts } from './screens/Drafts';
 import { AssetReports } from './screens/AssetReports';
 import { NotificationsScreen } from './screens/NotificationsScreen';
+import { Login } from './components/Login';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 
 function App() {
@@ -39,18 +40,23 @@ function AppMain() {
     }
   }, [location.pathname]);
 
-  console.log('Current route:', currentRoute);
-
   return (
       <div className="App">
-          <Header />
-          <PageTitle title={currentRoute} subtitle={subtitle}/>
+          {
+            location.pathname != '/login' && (
+              <>
+                <Header />
+                <PageTitle title={currentRoute} subtitle={subtitle}/>
+              </>
+            )
+          }
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/reports" element={<AssetReports />} />
             <Route path="/auc" element={<AUC />} />
             <Route path="/drafts" element={<Drafts />} />
             <Route path="/notifications" element={<NotificationsScreen />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </div>
   );

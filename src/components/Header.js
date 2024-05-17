@@ -6,7 +6,9 @@ import logo from '../assets/images/amis-logo.png';
 export const Header = () => {
     return (
         <div className="header-container">
-            <img src={logo} alt='AMIS' width='78px' height='45px' />
+            <NavLink to="/">
+                <img src={logo} alt='AMIS' width='78px' height='45px' style={{cursor: 'pointer'}}/>
+            </NavLink>
             <div className="nav-container">
                 <ul className="nav-list">
                     <li><NavLink exact to="/" className="nav-item">Home</NavLink></li>
