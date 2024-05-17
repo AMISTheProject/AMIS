@@ -7,6 +7,7 @@ import { AUC } from './screens/AUC';
 import { Dashboard } from './screens/Dashboard';
 import { Drafts } from './screens/Drafts';
 import { AssetReports } from './screens/AssetReports';
+import { NotificationsScreen } from './screens/NotificationsScreen';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 
 function App() {
@@ -49,6 +50,7 @@ function AppMain() {
             <Route path="/reports" element={<AssetReports />} />
             <Route path="/auc" element={<AUC />} />
             <Route path="/drafts" element={<Drafts />} />
+            <Route path="/notifications" element={<NotificationsScreen />} />
           </Routes>
         </div>
   );
