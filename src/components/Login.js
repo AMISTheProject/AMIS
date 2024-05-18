@@ -22,10 +22,10 @@ export const Login = () => {
     ]
 
       const handleLogin = () => {
-        if (username.trim() !== '') {
+        if (username.trim() !== '' && role !== '' && password !== '') {
             navigate('/');
         } else {
-            console.log('Please enter your username.');
+            console.log('Please enter your credentials.');
         }
     };
 
