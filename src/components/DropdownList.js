@@ -16,7 +16,7 @@ const customStyles = {
   }),
   option: (provided, state) => ({
     ...provided,
-    backgroundColor: state.isSelected ? '#999' : '#fff',
+    backgroundColor: state.isSelected ? 'rgba(255, 0, 0, 0.2)' : '#fff',
     color: state.isSelected ? '#fff' : '#000',
     color: state.isFocused && state.isSelected ? '#000':'fff',
     '&:hover': {
@@ -25,9 +25,16 @@ const customStyles = {
   })
 };
 
-export const DropdownList = ({options, placeholder}) => {
+export const DropdownList = ({options, placeholder, startValue, onChange}) => {
+  const [value, setValue] = useState(startValue);
+
+  function triggerChange(newVal) {
+    setValue(newVal);
+    onChange(newVal);
+  }
+
   return (
-    <Select styles={customStyles} options={options} placeholder={placeholder} value={''}/>
+    <Select styles={customStyles} options={options} placeholder={placeholder} value={value} onChange={(selectedOption) => triggerChange(selectedOption)}/>
   );
 }
 

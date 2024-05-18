@@ -3,13 +3,15 @@ import React, { useState } from 'react';
 import logo from '../assets/images/amis-logo.png';
 import { PrimaryButton } from './PrimaryButton';
 import { Checkbox } from './Checkbox';
-import {DropdownList} from './DropdownList';
-import { NavLink } from 'react-router-dom';
+import { DropdownList } from './DropdownList';
+import { useNavigate } from 'react-router-dom';
 
 export const Login = () => {
     const [isChecked, setIsChecked] = useState(false);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [role, setRole] = useState('');
+    const navigate = useNavigate();
 
     const options = [
         { value: 'plant-manager', label: 'Plant Manager' },
@@ -17,7 +19,16 @@ export const Login = () => {
         { value: 'finance-department', label: 'Finance Department' },
         { value: 'continuous-improvement-lead', label: 'Continuous Improvement Lead' },
         { value: 'business-services-organization', label: 'Business Services Organization' }
-      ]
+    ]
+
+      const handleLogin = () => {
+        if (username.trim() !== '') {
+            navigate('/');
+        } else {
+            console.log('Please enter your username.');
+        }
+    };
+
     return (
         <div className='login-container'>
             <div className='login-left-container'>
@@ -41,7 +52,7 @@ export const Login = () => {
                     </div>
                     <div className='asset-screen-input-container'>
                         <label className='asset-screen-input-label' for="role">Role</label>
-                        <DropdownList options={options} placeholder={'Select your role'}/>
+                        <DropdownList options={options} placeholder={'Select your role'} startValue={role} onChange={setRole}/>
                     </div>
 
                     <div className='asset-screen-input-container'>
@@ -54,9 +65,9 @@ export const Login = () => {
                         <p style={{marginTop: '14px'}}>Remember me</p>
                     </div>
 
-                    <NavLink to={'/'}>
+                    <div onClick={handleLogin}>
                         <PrimaryButton text={'Log In'} color='#fff' bgColor='#EB3131' className='login-button' />
-                    </NavLink>
+                    </div>
                 </div>
 
                 <div className='login-footer-container'>
