@@ -841,14 +841,23 @@
 }
 
 .login-right-container {
-    height: 100%;
-    width: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 105vw;
+    transform: translateX(-5vw);
     background-color: #EB3131;
     border-top-left-radius: 40px;
     border-bottom-left-radius: 40px;
     justify-content: center;
     display: flex;
     align-items: center;
+    transition: transform 1s ease-in-out;
+}
+
+.login-right-container.animate {
+    transform: translateX(50vw);
 }
 
 .login-form-container {
@@ -892,3 +901,19 @@
 .login-button:active {
     opacity: 0.8;
 }
+
+.amis-intro {
+    position: relative;
+    transform: scaleX(0) scaleY(0);
+    animation-name: intro-logo-anim;
+    animation-duration: 2s;
+}
+
+@keyframes intro-logo-anim {
+    0%   {transform: scaleX(0) scaleY(0);}
+    20% {transform: scaleX(1.1) scaleY(1.1);}
+    25% {transform: scaleX(1) scaleY(1);}
+    75% {transform: scaleX(1) scaleY(1);}
+    80% {transform: scaleX(1.1) scaleY(1.1);}
+    100% {transform: scaleX(0) scaleY(0);}
+  }

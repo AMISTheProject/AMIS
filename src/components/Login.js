@@ -1,5 +1,5 @@
 import '../assets/style/styles.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from '../assets/images/amis-logo.png';
 import { PrimaryButton } from './PrimaryButton';
 import { Checkbox } from './Checkbox';
@@ -11,7 +11,16 @@ export const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [role, setRole] = useState('');
+    const [isAnimating, setIsAnimating] = useState(false);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsAnimating(true);
+        }, 2000); // 1 second delay
+
+        return () => clearTimeout(timer);
+    }, []);
 
     const options = [
         { value: 'plant-manager', label: 'Plant Manager' },
@@ -75,7 +84,8 @@ export const Login = () => {
                 </div>
             </div>
 
-            <div className='login-right-container'>
+            <div className={`login-right-container ${isAnimating ? 'animate' : ''}`}>
+                <img src={logo} height='180px' width='240px' className='amis-intro' />
             </div>
         </div>
     );
