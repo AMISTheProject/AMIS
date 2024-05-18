@@ -1,24 +1,18 @@
-
-import React from 'react'
-import { redirect } from 'react-router-dom';
-import Select from 'react-select'
-import Creatable from 'react-select/creatable';
+import React, { useState } from 'react';
+import Select from 'react-select';
 
 const customStyles = {
   control: (provided, state) => ({
     ...provided,
     outline: 'none',
-    boxShadow: state.isFocused ? 'inset 0 0 0 1px #000' : 'none',
+    boxShadow: state.isFocused ? '0 0 0 1px rgba(255, 0, 0, 0.2)' : 'none',
     backgroundColor: '#ffffff',
     height: '50px',
     borderRadius: '8px',
-    borderColor: 'rgba(0, 0, 0, 0.2)',
+    borderColor: state.isFocused ? '#EB3131' : 'rgba(0, 0, 0, 0.2)',
     '&:hover': {
-      borderColor: 'black',
+      borderColor: '#EB3131'
     },
-    '&:focus': {
-      borderColor: 'black',
-    }
   }),
   option: (provided, state) => ({
     ...provided,
@@ -31,8 +25,10 @@ const customStyles = {
   })
 };
 
-export const DropdownList = ({options, placeholder}) => (
-  <Select styles={customStyles} options={options} placeholder={placeholder}/>
-)
+export const DropdownList = ({options, placeholder}) => {
+  return (
+    <Select styles={customStyles} options={options} placeholder={placeholder} value={''}/>
+  );
+}
 
 

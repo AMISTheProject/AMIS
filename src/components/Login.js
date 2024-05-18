@@ -1,13 +1,15 @@
 import '../assets/style/styles.css';
 import React, { useState } from 'react';
 import logo from '../assets/images/amis-logo.png';
-import userIcon from '../assets/images/user-icon.png';
 import { PrimaryButton } from './PrimaryButton';
 import { Checkbox } from './Checkbox';
 import {DropdownList} from './DropdownList';
+import { NavLink } from 'react-router-dom';
 
 export const Login = () => {
     const [isChecked, setIsChecked] = useState(false);
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
 
     const options = [
         { value: 'plant-manager', label: 'Plant Manager' },
@@ -25,8 +27,17 @@ export const Login = () => {
 
                 <div className='login-form-container'>
                     <div className='asset-screen-input-container'>
-                        <label className='asset-screen-input-label' for="role">Username</label>
-                        <input className='asset-screen-input-field' type="text" id="role" name="role" placeholder='Username'></input>
+                        <label className='asset-screen-input-label' for="username">Username</label>
+                        <input 
+                            className='asset-screen-input-field' 
+                            type="text" 
+                            id="username" 
+                            name="username" 
+                            placeholder='Username' 
+                            value={username}
+                            onChange={(e) => {setUsername(e.target.value)}}
+                        >
+                        </input>
                     </div>
                     <div className='asset-screen-input-container'>
                         <label className='asset-screen-input-label' for="role">Role</label>
@@ -35,7 +46,7 @@ export const Login = () => {
 
                     <div className='asset-screen-input-container'>
                         <label className='asset-screen-input-label' for="password">Password</label>
-                        <input className='asset-screen-input-field' type="password" id="password" name="password" placeholder='Enter your password'></input>
+                        <input className='asset-screen-input-field' type="password" id="password" name="password" placeholder='Enter your password' value={password} onChange={(e) => {setPassword(e.target.value)}}></input>
                     </div>
 
                     <div className='login-check-container'>
@@ -43,7 +54,9 @@ export const Login = () => {
                         <p style={{marginTop: '14px'}}>Remember me</p>
                     </div>
 
-                    <PrimaryButton text={'Log In'} color='#fff' bgColor='#EB3131' className='login-button' />
+                    <NavLink to={'/'}>
+                        <PrimaryButton text={'Log In'} color='#fff' bgColor='#EB3131' className='login-button' />
+                    </NavLink>
                 </div>
 
                 <div className='login-footer-container'>

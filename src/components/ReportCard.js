@@ -1,13 +1,12 @@
 import '../assets/style/styles.css';
-import pdfIcon from '../assets/images/PDF.png';
 import shareIcon from '../assets/images/share.png';
 import downloadIcon from '../assets/images/download.png';
 
-export const ReportCard = ({title, date, user, active}) => {
+export const ReportCard = ({title, date, user, active, icon}) => {
     return (
         <div className={`report-card-container ${active? 'active' : ''}`}>
             <div className='report-card-left'>
-                <img src={pdfIcon} alt='Asset PDF file' height='50px' width='50px'/>
+                <img src={icon} alt='Asset PDF file' height='50px' width='50px'/>
             </div>
             <div className='report-card-right'>
                 <div className='report-card-title-container'>

@@ -3,7 +3,8 @@ import { PrimaryButton } from '../components/PrimaryButton';
 import { Calendar } from '../components/Calendar';
 import { ReportCard } from '../components/ReportCard';
 import { OverviewCard } from '../components/OverviewCard';
-import { CTTCard } from '../components/CTTCard';
+import pdfIcon from '../assets/images/PDF.png';
+import excelIcon from '../assets/images/excel-icon.png';
 
 export const Dashboard = () => {
 
@@ -27,10 +28,10 @@ export const Dashboard = () => {
                         <p className='plant-files-desc'>Don't forget to take a look at some of the plant's most significant files!</p>
 
                         <div className='capex-tracking-tool-card'>
-                            <CTTCard title='Capex Tracking Tool' date='1 May 2024' user='AMIS' />
+                            <ReportCard title='Capex Tracking Tool' date='1 May 2024' user='AMIS' icon={excelIcon}/>
                         </div>
                         <div className='plant-files-card-container'>
-                            <ReportCard title='Capex Tracking Tool' date='1 May 2024' user='AMIS' />
+                            <ReportCard title='Capex Tracking Tool' date='1 May 2024' user='AMIS' icon={pdfIcon}/>
                         </div>
                     </div>
                 </div>
