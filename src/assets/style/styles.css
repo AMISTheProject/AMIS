@@ -274,8 +274,8 @@
 }
 
 .auc-page {
-    height: 100%;
     width: 70%;
+    overflow-y: scroll; 
 }
 
 .asset-screen-container {
@@ -917,3 +917,17 @@
     80% {transform: scaleX(1.1) scaleY(1.1);}
     100% {transform: scaleX(0) scaleY(0);}
   }
+
+  .footer-buttons {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#group-icon {
+    cursor: pointer;
+}
+
+#group-icon:active {
+    opacity: 0.7;
+}
