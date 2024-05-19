@@ -7,17 +7,51 @@ import pdfIcon from '../assets/images/PDF.png';
 import excelIcon from '../assets/images/excel-icon.png';
 import React, { useState, useEffect, useContext } from 'react';
 import RoleContext from '../Context';
+import { QuartersBarChart } from '../components/QuartersBarChart';
 
 export const Dashboard = ({ role }) => {
     const { username } = useContext(RoleContext);
-    const [subtitle, setSubtitle] = useState('Time to make progress on our projects!')
-    const [headerButton, setHeaderButton] = useState(<PrimaryButton className="dashboard-custom-report-button" text='Quick custom report' />);
+    const [subtitle, setSubtitle] = useState('Time to make progress on our projects!');
+    const [headerButton, setHeaderButton] = useState(
+        <PrimaryButton 
+            className="dashboard-custom-report-button" 
+            text='Quick custom report' 
+        />
+    );
+    const [rightContainerContent, setRightContainerContent] = useState(
+        <>
+            <h3 className='monthly-overview-title'>Monthly Overview</h3>
+            <div className='monthly-overview-card-row'>
+                <OverviewCard number='4' desc='AUCs modified'/>
+                <OverviewCard number='2' desc='Custom reports'/>
+                <OverviewCard number='1' desc='Report shared'/>
+            </div>
+
+            <div className='monthly-overview-card-row'>
+                <OverviewCard number='3' desc='Draft forms'/>
+                <OverviewCard number='2' desc='Unread messages'/>
+                <OverviewCard number='7' desc='Downloads'/>
+            </div>
+        </>
+    )
 
     useEffect(() => {
         function dynamicComponentLoad() {
             if(role === 'business-services-organization') {
                 setSubtitle('Let’s secure plant’s proper workflow!');
-                setHeaderButton(<PrimaryButton color='#fff' bgColor='#EB3131' className="dashboard-custom-report-button" text='Quickly Approve Data' />)
+                setHeaderButton(
+                    <PrimaryButton 
+                        color='#fff' 
+                        bgColor='#EB3131' 
+                        className="dashboard-custom-report-button" 
+                        text='Quickly Approve Data' 
+                    />
+                );
+                setRightContainerContent(
+                    <>
+                        <QuartersBarChart />
+                    </>
+                );
             }
         }
 
@@ -55,18 +89,7 @@ export const Dashboard = ({ role }) => {
                 </div>
 
                 <div className='dashboard-content-half-container'>
-                    <h3 className='monthly-overview-title'>Monthly Overview</h3>
-                    <div className='monthly-overview-card-row'>
-                        <OverviewCard number='4' desc='AUCs modified'/>
-                        <OverviewCard number='2' desc='Custom reports'/>
-                        <OverviewCard number='1' desc='Report shared'/>
-                    </div>
-
-                    <div className='monthly-overview-card-row'>
-                        <OverviewCard number='3' desc='Draft forms'/>
-                        <OverviewCard number='2' desc='Unread messages'/>
-                        <OverviewCard number='7' desc='Downloads'/>
-                    </div>
+                    { rightContainerContent }
                 </div>
             </div>
         </div>
