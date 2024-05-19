@@ -72,8 +72,10 @@ export const Dashboard = ({ role }) => {
             </div>
 
             <div className='dashboard-content-container'>
-                <div className='dashboard-content-half-container'>
-                    <Calendar />
+                <div className={`dashboard-content-half-container-left ${role}`}>
+                    <div className={`dashboard-calendar-container ${role}`}>
+                        <Calendar />
+                    </div>
 
                     <div className='plant-files-container'>
                         <h4 className='plant-files-title'>Plant's files</h4>
@@ -88,7 +90,7 @@ export const Dashboard = ({ role }) => {
                     </div>
                 </div>
 
-                <div className='dashboard-content-half-container'>
+                <div className={`dashboard-content-half-container-right ${role}`}>
                     { rightContainerContent }
                 </div>
             </div>

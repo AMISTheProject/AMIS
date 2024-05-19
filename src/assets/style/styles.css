@@ -547,11 +547,34 @@
     gap: 80px;
 }
 
-.dashboard-content-half-container {
+.dashboard-content-half-container-left {
     display: flex;
     flex-direction: column;
     gap: 40px;
     width: 50%;
+}
+
+.dashboard-content-half-container-right {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 50%;
+}
+
+.dashboard-content-half-container-left.business-services-organization {
+    width: 65%;
+}
+
+.dashboard-content-half-container-right.business-services-organization {
+    width: 35%;
+}
+
+.dashboard-calendar-container {
+    width: 100%;
+}
+
+.dashboard-calendar-container.business-services-organization {
+    width: 76.923%;
 }
 
 .calendar-container {
