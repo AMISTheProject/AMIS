@@ -8,6 +8,7 @@ import excelIcon from '../assets/images/excel-icon.png';
 import React, { useState, useEffect, useContext } from 'react';
 import RoleContext from '../Context';
 import { QuartersBarChart } from '../components/QuartersBarChart';
+import { MonthStack } from '../components/MonthStack';
 
 export const Dashboard = ({ role }) => {
     const { username } = useContext(RoleContext);
@@ -33,6 +34,19 @@ export const Dashboard = ({ role }) => {
                 <OverviewCard number='7' desc='Downloads'/>
             </div>
         </>
+    );
+    const [leftContainerContent, setLeftContainerContent] = useState(
+        <>
+            <h4 className='plant-files-title'>Plant's files</h4>
+            <p className='plant-files-desc'>Don't forget to take a look at some of the plant's most significant files!</p>
+
+            <div className='capex-tracking-tool-card'>
+                <ReportCard title='Capex Tracking Tool' date='1 May 2024' user='AMIS' icon={excelIcon}/>
+            </div>
+            <div className='plant-files-card-container'>
+                <ReportCard title='Capex Tracking Tool' date='1 May 2024' user='AMIS' icon={pdfIcon}/>
+            </div>
+        </>
     )
 
     useEffect(() => {
@@ -52,6 +66,11 @@ export const Dashboard = ({ role }) => {
                         <QuartersBarChart />
                     </>
                 );
+                setLeftContainerContent(
+                    <>
+                        <MonthStack />
+                    </>
+                )
             }
         }
 
@@ -78,15 +97,7 @@ export const Dashboard = ({ role }) => {
                     </div>
 
                     <div className='plant-files-container'>
-                        <h4 className='plant-files-title'>Plant's files</h4>
-                        <p className='plant-files-desc'>Don't forget to take a look at some of the plant's most significant files!</p>
-
-                        <div className='capex-tracking-tool-card'>
-                            <ReportCard title='Capex Tracking Tool' date='1 May 2024' user='AMIS' icon={excelIcon}/>
-                        </div>
-                        <div className='plant-files-card-container'>
-                            <ReportCard title='Capex Tracking Tool' date='1 May 2024' user='AMIS' icon={pdfIcon}/>
-                        </div>
+                        { leftContainerContent }
                     </div>
                 </div>
 
