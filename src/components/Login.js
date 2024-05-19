@@ -1,18 +1,21 @@
 import '../assets/style/styles.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import logo from '../assets/images/amis-logo.png';
 import { PrimaryButton } from './PrimaryButton';
 import { Checkbox } from './Checkbox';
 import { DropdownList } from './DropdownList';
 import { useNavigate } from 'react-router-dom';
+import RoleContext from '../Context';
 
 export const Login = () => {
     const [isChecked, setIsChecked] = useState(false);
-    const [username, setUsername] = useState('');
+    const [loginUsername, setLoginUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [role, setRole] = useState('');
+    const [loginRole, setLoginRole] = useState('');
     const [isAnimating, setIsAnimating] = useState(false);
     const navigate = useNavigate();
+    const { role, setRole } = useContext(RoleContext);
+    const { username, setUsername } = useContext(RoleContext);
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -31,7 +34,9 @@ export const Login = () => {
     ]
 
       const handleLogin = () => {
-        if (username.trim() !== '' && role !== '' && password !== '') {
+        if (loginUsername.trim() !== '' && loginRole !== '' && password !== '') {
+            setRole(loginRole.value);
+            setUsername(loginUsername);
             navigate('/');
         } else {
             console.log('Please enter your credentials.');
@@ -54,14 +59,14 @@ export const Login = () => {
                             id="username" 
                             name="username" 
                             placeholder='Username' 
-                            value={username}
-                            onChange={(e) => {setUsername(e.target.value)}}
+                            value={loginUsername}
+                            onChange={(e) => {setLoginUsername(e.target.value)}}
                         >
                         </input>
                     </div>
                     <div className='asset-screen-input-container'>
                         <label className='asset-screen-input-label' for="role">Role</label>
-                        <DropdownList options={options} placeholder={'Select your role'} startValue={role} onChange={setRole}/>
+                        <DropdownList options={options} placeholder={'Select your role'} startValue={loginRole} onChange={setLoginRole}/>
                     </div>
 
                     <div className='asset-screen-input-container'>

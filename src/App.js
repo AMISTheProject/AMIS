@@ -1,6 +1,5 @@
-import logo from './logo.svg';
+import React, { useState, useEffect, useContext } from 'react';
 import './App.css';
-import { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { PageTitle } from './components/PageTitle';
 import { AUC } from './screens/AUC';
@@ -10,11 +9,14 @@ import { AssetReports } from './screens/AssetReports';
 import { NotificationsScreen } from './screens/NotificationsScreen';
 import { Login } from './components/Login';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import RoleContext, { RoleProvider } from './Context';
 
 function App() {
   return (
       <BrowserRouter>
-        <AppMain />
+        <RoleProvider>
+          <AppMain />
+        </RoleProvider>
       </BrowserRouter>
   );
 }
@@ -23,6 +25,7 @@ function AppMain() {
   const location = useLocation();
   const [currentRoute, setCurrentRoute] = useState(location.pathname);
   const [subtitle, setSubtitle] = useState('');
+  const { role, setRole } = useContext(RoleContext);
 
   useEffect(() => {
     if(location.pathname == '/') {
@@ -51,7 +54,7 @@ function AppMain() {
             )
           }
           <Routes>
-            <Route path="/" element={<Dashboard />} />
+            <Route path="/" element={<Dashboard role={role}/>} />
             <Route path="/reports" element={<AssetReports />} />
             <Route path="/auc" element={<AUC />} />
             <Route path="/drafts" element={<Drafts />} />

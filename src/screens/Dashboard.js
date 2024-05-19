@@ -5,18 +5,36 @@ import { ReportCard } from '../components/ReportCard';
 import { OverviewCard } from '../components/OverviewCard';
 import pdfIcon from '../assets/images/PDF.png';
 import excelIcon from '../assets/images/excel-icon.png';
+import React, { useState, useEffect, useContext } from 'react';
+import RoleContext from '../Context';
 
-export const Dashboard = () => {
+export const Dashboard = ({ role }) => {
+    const { username } = useContext(RoleContext);
+    const [subtitle, setSubtitle] = useState('Time to make progress on our projects!')
+    const [headerButton, setHeaderButton] = useState(<PrimaryButton className="dashboard-custom-report-button" text='Quick custom report' />);
+
+    useEffect(() => {
+        function dynamicComponentLoad() {
+            if(role === 'business-services-organization') {
+                setSubtitle('Let’s secure plant’s proper workflow!');
+                setHeaderButton(<PrimaryButton color='#fff' bgColor='#EB3131' className="dashboard-custom-report-button" text='Quickly Approve Data' />)
+            }
+        }
+
+        dynamicComponentLoad();
+    }, []);
+
 
     return (
+        <>
         <div className='dashboard-container'>
             <div className='dashboard-header'>
                 <div className='dashboard-header-title-container'>
-                    <h4 className='dashboard-header-title'>Hello, Solon!</h4>
-                    <p className='dashboard-header-desc'>Time to make progress on our projects!</p>
+                    <h4 className='dashboard-header-title'>Hello, {username.split(' ')[0]}</h4>
+                    <p className='dashboard-header-desc'>{subtitle}</p>
                 </div>
 
-                <PrimaryButton className="dashboard-custom-report-button" text='Quick custom report' />
+                { headerButton }
             </div>
 
             <div className='dashboard-content-container'>
@@ -52,5 +70,6 @@ export const Dashboard = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
