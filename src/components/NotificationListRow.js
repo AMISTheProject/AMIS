@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Checkbox } from './Checkbox';
 import arrow from '../assets/images/left-arrow-icon.png';
 
-export const NotificationListRow = ({user, title, desc}) => {
+export const NotificationListRow = ({user, title, desc, headerCheckboxStatus}) => {
     const [isSelected, setIsSelected] = useState(false);
     const [isExpanded, setIsExpanded] = useState(false);
 
@@ -15,7 +15,7 @@ export const NotificationListRow = ({user, title, desc}) => {
         <div className='notif-row-container'>
             <div className='notif-row-header'>
                 <div className='notif-check'>
-                    <Checkbox value={isSelected} onChange={setIsSelected}/>
+                    <Checkbox value={headerCheckboxStatus} onChange={setIsSelected}/>
                 </div>
 
                 <div className='notif-user-container'>

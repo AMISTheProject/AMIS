@@ -11,6 +11,7 @@ export const NotificationsScreen = () => {
     const [areNotifAllowed, setAreNotifAllowed] = useState(true);
     const [allSelected, setAllSelected] = useState(false);
     const [value, setValue] = useState(false);
+    
 
     return (
         <div className='notifications-container'>
@@ -52,10 +53,10 @@ export const NotificationsScreen = () => {
             </div>
 
             <div className='notifications-content'>
-                <NotificationListRow user='AMIS' title='April Report'/>
-                <NotificationListRow user='Takis' title='Quarter Report'/>
-                <NotificationListRow user='BSO' title='Assets Under Creation'/>
-                <NotificationListRow user='AMIS' title='Extraction Completed'/>
+                <NotificationListRow user='AMIS' title='April Report' headerCheckboxStatus={allSelected}/>
+                <NotificationListRow user='Takis' title='Quarter Report' headerCheckboxStatus={allSelected}/>
+                <NotificationListRow user='BSO' title='Assets Under Creation' headerCheckboxStatus={allSelected}/>
+                <NotificationListRow user='AMIS' title='Extraction Completed' headerCheckboxStatus={allSelected}/>
             </div>
         </div>
     );
