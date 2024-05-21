@@ -7,7 +7,7 @@ export const Approvals = () => {
         <div className='drafts-container'>
             <div className='drafts-header'>
                 <div className='drafts-header-left'>
-                    <h4>April's Assets Under Construction</h4>
+                    <h4 className='approvals-header-text'>April's Assets Under Construction</h4>
                 </div>
 
                 <div className='drafts-header-right'>
