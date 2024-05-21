@@ -3,6 +3,7 @@ import { ReportCard } from '../components/ReportCard';
 import groupIcon from '../assets/images/group-icon.png';
 import navArrowIcon from '../assets/images/left-arrow-icon.png';
 import demoPdf from '../assets/images/pdf-image.png';
+import pdfIcon from '../assets/images/pdf-icon-legit.png'
 
 export const AssetReports = () => {
     return (
@@ -16,9 +17,9 @@ export const AssetReports = () => {
                 <input className='asset-screen-input-field' id="search" name="search" placeholder='Search' />
 
                 <div className='reports-card-container'>
-                    <ReportCard title='May Asset Report' date='30 Apr 2024' user='Plant Manager' active={true}/>
-                    <ReportCard title='April Asset Report' date='30 Mar 2024' user='Plant Manager' />
-                    <ReportCard title='March Asset Report' date='28 Feb 2024' user='Plant Manager' />
+                    <ReportCard title='May Asset Report' date='30 Apr 2024' user='Plant Manager' icon={pdfIcon} active={true}/>
+                    <ReportCard title='April Asset Report' date='30 Mar 2024' user='Plant Manager' icon={pdfIcon} />
+                    <ReportCard title='March Asset Report' date='28 Feb 2024' user='Plant Manager' icon={pdfIcon} />
 
                 </div>
             </div>
