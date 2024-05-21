@@ -21,7 +21,7 @@ export const Header = ({role}) => {
                     [
                         {navName: 'Home', navRoute: '/'}, 
                         {navName: 'Approvals', navRoute: '/approvals'},
-                        {navName: 'Reports', navRoute: '/reports'},
+                        {navName: 'Reports', navRoute: '/report-creation'},
                     ]
                 );
             }
@@ -42,10 +42,6 @@ export const Header = ({role}) => {
                             <li key={index}><NavLink to={navItem.navRoute} className="nav-item">{navItem.navName}</NavLink></li>
                         ))
                     }
-                    {/* <li><NavLink to="/" className="nav-item">Home</NavLink></li>
-                    <li><NavLink to="/reports" className="nav-item">Reports</NavLink></li>
-                    <li><NavLink to="/auc" className="nav-item">AUC</NavLink></li>
-                    <li><NavLink to="/drafts" className="nav-item">Drafts</NavLink></li> */}
                 </ul>
             </div>
             <div className='header-right-container'>

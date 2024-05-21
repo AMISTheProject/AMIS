@@ -12,6 +12,7 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import RoleContext, { RoleProvider } from './Context';
 import { Approvals } from './screens/Approvals';
 import { AssetApproval } from './screens/AssetApproval';
+import { ReportCreation } from './screens/ReportCreation';
 
 function App() {
   return (
@@ -73,6 +74,7 @@ function AppMain() {
             <Route path="/notifications" element={<NotificationsScreen />} />
             <Route path="/approvals" element={<Approvals />} />
             <Route path="/asset-approval" element={<AssetApproval />} />
+            <Route path="/report-creation" element={<ReportCreation />} />
           </Routes>
         </div>
   );
