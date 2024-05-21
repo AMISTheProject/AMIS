@@ -4,17 +4,22 @@ import groupIcon from '../assets/images/group-icon.png';
 import navArrowIcon from '../assets/images/left-arrow-icon.png';
 import demoPdf from '../assets/images/pdf-image.png';
 import pdfIcon from '../assets/images/pdf-icon-legit.png'
+import { NavLink } from 'react-router-dom';
+import { PrimaryButton } from '../components/PrimaryButton';
 
 export const AssetReports = () => {
     return (
+
         <div className='reports-container'>
             <div className='reports-content-container'>
                 <div className="reports-title-container">
                     <h3 className='auc-sidebar-title'>Latest Reports</h3>
+
                     <img src={groupIcon} class="auc-side-bar-group-icon" alt='Group' width='25px' height='25px'/>
                 </div>
 
                 <input className='asset-screen-input-field' id="search" name="search" placeholder='Search' />
+               
 
                 <div className='reports-card-container'>
                     <ReportCard title='May Asset Report' date='30 Apr 2024' user='Plant Manager' icon={pdfIcon} active={true}/>
