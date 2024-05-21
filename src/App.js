@@ -52,6 +52,9 @@ function AppMain() {
     } else if(location.pathname == '/asset-approval') {
       setCurrentRoute('Asset Aprovals');
       setSubtitle('Asset Under Construction 1');
+    } else if(location.pathname == '/report-creation') {
+      setCurrentRoute('Report Creation');
+      setSubtitle('');
     }
   }, [location.pathname]);
 
