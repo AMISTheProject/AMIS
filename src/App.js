@@ -11,7 +11,7 @@ import { Login } from './components/Login';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import RoleContext, { RoleProvider } from './Context';
 import { Approvals } from './screens/Approvals';
-import { AssetAproval } from './screens/AssetAproval';
+import { AssetApproval } from './screens/AssetApproval';
 
 function App() {
   return (
@@ -48,6 +48,9 @@ function AppMain() {
     } else if(location.pathname == '/notifications') {
       setCurrentRoute('Notifications');
       setSubtitle('Stay up to date');
+    } else if(location.pathname == '/asset-approval') {
+      setCurrentRoute('Asset Aprovals');
+      setSubtitle('Asset Under Construction 1');
     }
   }, [location.pathname]);
 
@@ -69,7 +72,7 @@ function AppMain() {
             <Route path="/drafts" element={<Drafts />} />
             <Route path="/notifications" element={<NotificationsScreen />} />
             <Route path="/approvals" element={<Approvals />} />
-            <Route path="/asset-approval" element={<AssetAproval />} />
+            <Route path="/asset-approval" element={<AssetApproval />} />
           </Routes>
         </div>
   );
