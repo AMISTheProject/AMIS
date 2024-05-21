@@ -2,8 +2,63 @@ import '../assets/style/styles.css';
 import { Checkbox } from '../components/Checkbox';
 import { PrimaryButton } from '../components/PrimaryButton';
 import { NavLink } from 'react-router-dom'; 
+import React, { useState, useEffect, useContext } from 'react';
+
+
+const plantEngineerReportFields = [
+    'Acquisition Value',
+    'Asset Super Number',
+    'Plant name',
+    'Category (I/M)',
+    'Category',
+    'WBS Element',
+    'WBS Description',
+    'Project Engineer',
+    'Cost Center',
+    'Currency',
+    'Book Value',
+    'Purchase Order (PO)',
+    'PO Line',
+    'PO Line Description',
+    'Estimated completion date based on RFA',
+    'Depreciated Value',
+    'Reason for extension',
+    'Extension of useful life (months)'
+]
+
+const bsoReportFields = [
+    'Accumulated Depreciation - Machinery',
+    'Capital Work in Progress - Machinery',
+    'Depreciation Expenses',
+    'Gain on Disposal of Assets',
+    'Impairment Loss - Machinery',
+    'Machinery Spare Parts Inventory',
+    'Maintenance & Repairs Expenses',
+    'Revaluation Surplus',
+    'Lease Liability',
+    'Asset Retirement Obligation',
+    'Cash and Cash Equivalents',
+    'Inventory (net)',
+    'Prepaid Expenses',
+    'Accounts Receivable (net)',
+    'Property, Plant, and Equipment (PPE) (net)',
+    'Land',
+    'Buildings',
+    'Liabilities'
+    ];
 
 export const ReportCreation = () => {
+    const [fields, setFields] = useState(plantEngineerReportFields);
+    const { role, setRole } = useContext(RoleContext);
+    useEffect(() => {
+        function dynamicComponentLoad() {
+            if(role === 'business-services-organization') {
+               setFields(bsoReportFields);
+            }
+        }
+        dynamicComponentLoad();
+    }, []);
+    
     return (
         <div className='report-creation-container'>
             <div className='report-creation-header'>
