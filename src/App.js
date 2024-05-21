@@ -31,7 +31,7 @@ function AppMain() {
   const { role, setRole } = useContext(RoleContext);
 
   useEffect(() => {
-    if(location.pathname == '/') {
+    if(location.pathname == '/dashboard') {
       setCurrentRoute('Dashboard Overview');
       setSubtitle('');
     } else if(location.pathname == '/reports') {
@@ -61,7 +61,7 @@ function AppMain() {
   return (
       <div className="App">
           {
-            location.pathname != '/login' && (
+            location.pathname != '/' && (
               <>
                 <Header role={role}/>
                 <PageTitle title={currentRoute} subtitle={subtitle}/>
@@ -69,8 +69,8 @@ function AppMain() {
             )
           }
           <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/" element={<Dashboard role={role}/>} />
+            <Route path="/" element={<Login />} />
+            <Route path="/dashboard" element={<Dashboard role={role}/>} />
             <Route path="/reports" element={<AssetReports />} />
             <Route path="/auc" element={<AUC />} />
             <Route path="/drafts" element={<Drafts />} />

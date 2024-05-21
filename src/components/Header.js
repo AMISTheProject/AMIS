@@ -8,7 +8,7 @@ export const Header = ({role}) => {
     const [roleAbbr, setRoleAbbr] = useState('PlEng');
     const [navItems, setNavItems] = useState(
         [
-            {navName: 'Home', navRoute: '/'}, 
+            {navName: 'Home', navRoute: '/dashboard'}, 
             {navName: 'Reports', navRoute: '/reports'},
             {navName: 'AUC', navRoute: '/auc'},
             {navName: 'Drafts', navRoute: '/drafts'}
@@ -21,7 +21,7 @@ export const Header = ({role}) => {
                 setRoleAbbr('BSO');
                 setNavItems(
                     [
-                        {navName: 'Home', navRoute: '/'}, 
+                        {navName: 'Home', navRoute: '/dashboard'}, 
                         {navName: 'Approvals', navRoute: '/approvals'},
                         {navName: 'Reports', navRoute: '/report-creation'},
                     ]

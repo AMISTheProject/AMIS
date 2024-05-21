@@ -28,7 +28,7 @@ export const Login = () => {
         if (loginUsername.trim() !== '' && loginRole !== '' && password !== '') {
             setRole(loginRole.value);
             setUsername(loginUsername);
-            navigate('/');
+            navigate('/dashboard');
         } else {
             console.log('Please enter your credentials.');
         }
