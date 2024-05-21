@@ -1426,9 +1426,17 @@
 
 .report-creation-container {
     background-color: #fff;
-    padding: 0 80px;
+    padding: 0 80px 60px 80px;
     overflow-y: scroll;
     height: 100vh;
+}
+
+.report-creation-actions-half {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .report-creation-content {
@@ -1472,6 +1480,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    gap: 50px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
