@@ -1185,4 +1185,134 @@
 
 .notifications-container {
     padding: 40px 80px;
+    background-color: #fff;
+}
+
+.notif-row-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    gap: 40px;
+}
+
+.notif-row-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.notif-check {
+    width: 5%;
+}
+
+.notif-user-container {
+    width: 10%;
+}
+
+.notif-user {
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    padding: 6px 10px;
+}
+
+.notif-title {
+    font-weight: 500;
+    font-size: 17px;
+    width: 75%;
+    padding-left: 40px;
+}
+
+.notif-details-button {
+    width: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.notif-details-button:active {
+    opacity: 0.7;
+}
+
+.notif-details-arrow {
+    transform: rotate(270deg);
+    transition: transform 0.2s;
+}
+
+.notif-details-arrow.exp {
+    transform: rotate(90deg);
+}
+
+.notifications-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.notifications-perm-container {
+    padding: 12px 28px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 14px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+}
+
+.notifications-perm-text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.notifications-perm-title {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.notifications-perm-p {
+    font-size: 14px;
+}
+
+.notifications-title {
+    font-weight: 500;
+}
+
+.notifications-actions {
+    margin-top: 20px;
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.notifications-actions > .chip-container:first-of-type {
+    margin-left: 30px;
+}
+
+.chip-container {
+    padding: 6px 18px;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.chip-container:hover {
+    background-color: rgba(255, 0, 0, 0.1);
 }
