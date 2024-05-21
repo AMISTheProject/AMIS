@@ -55,7 +55,7 @@ function AppMain() {
           {
             location.pathname != '/login' && (
               <>
-                <Header className='app-header' role={role}/>
+                <Header role={role}/>
                 <PageTitle title={currentRoute} subtitle={subtitle}/>
               </>
             )
