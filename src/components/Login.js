@@ -1,6 +1,7 @@
 import '../assets/style/styles.css';
 import React, { useState, useEffect, useContext } from 'react';
-import logo from '../assets/images/amis-logo.png';
+import logo from '../assets/images/amis-logo-off-white-trans.png';
+import logoOfficial from '../assets/images/amis-logo-off-trans.png';
 import { PrimaryButton } from './PrimaryButton';
 import { Checkbox } from './Checkbox';
 import { DropdownList } from './DropdownList';
@@ -16,14 +17,7 @@ export const Login = () => {
     const navigate = useNavigate();
     const { role, setRole } = useContext(RoleContext);
     const { username, setUsername } = useContext(RoleContext);
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsAnimating(true);
-        }, 2000); // 1 second delay
-
-        return () => clearTimeout(timer);
-    }, []);
+    const [isHidden, setIsHidden] = useState(false);
 
     const options = [
         { value: 'plant-manager', label: 'Plant Manager' },
@@ -47,7 +41,7 @@ export const Login = () => {
         <div className='login-container'>
             <div className='login-left-container'>
                 <div className='login-left-header'>
-                    <img src={logo} width='78px' height='45px' />
+                    <img src={logoOfficial} width='60px' height='60px' />
                 </div>
 
                 <div className='login-form-container'>
@@ -76,7 +70,7 @@ export const Login = () => {
 
                     <div className='login-check-container'>
                         <Checkbox value={isChecked} onChange={setIsChecked} />
-                        <p style={{marginTop: '14px'}}>Remember me</p>
+                        <p>Remember me</p>
                     </div>
 
                     <div onClick={handleLogin}>
@@ -89,8 +83,14 @@ export const Login = () => {
                 </div>
             </div>
 
-            <div className={`login-right-container ${isAnimating ? 'animate' : ''}`}>
-                <img src={logo} height='180px' width='240px' className='amis-intro' />
+            <div className={`login-right-container`}>
+                <img src={logo} height='300px' width='300px' className='login-big-logo'/>
+                <div className='login-words-container'>
+                    <span className='logo-container-word'>Agile</span>
+                    <span className='logo-container-word'>Management</span>
+                    <span className='logo-container-word'>Intelligent</span>
+                    <span className='logo-container-word'>Solutions</span>
+                </div>
             </div>
         </div>
     );

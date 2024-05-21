@@ -2,7 +2,7 @@ import '../assets/style/styles.css';
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Notifications } from './Notifications';
-import logo from '../assets/images/amis-logo.png';
+import logo from '../assets/images/amis-logo-off-trans.png';
 
 export const Header = ({role}) => {
     const [navItems, setNavItems] = useState(
@@ -33,7 +33,8 @@ export const Header = ({role}) => {
     return (
         <div className="header-container">
             <NavLink to="/">
-                <img src={logo} alt='AMIS' width='78px' height='45px' style={{cursor: 'pointer'}}/>
+                <img src={logo} alt='AMIS' width='60px' height='60px' className='logo'/>
+                {/* <img src={logo} alt='AMIS' width='50px' height='50px' style={{cursor: 'pointer', transform: 'rotate(180deg)', marginLeft: -15}}/> */}
             </NavLink>
             <div className="nav-container">
                 <ul className="nav-list">
