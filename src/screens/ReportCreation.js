@@ -70,9 +70,9 @@ export const ReportCreation = () => {
                     <input className='report-creation-input-field' id="from" name="from" placeholder='From' />
                     <input className='report-creation-input-field' id="to" name="to" placeholder='To' />
                 </div>
-                <NavLink to='/reports'>
-                    <PrimaryButton bgColor='#EB3131' color='#fff' text='Create Report' />
-                </NavLink>
+                
+                <PrimaryButton className=".red-button" bgColor='#EB3131' color='#fff' text='Create Report' />
+                
             </div>
 
             <div className='report-creation-actions'>
@@ -85,7 +85,7 @@ export const ReportCreation = () => {
                     role !== 'business-services-organization' &&
                     <div className='report-creation-actions-half'>
                         <h4 className='report-creation-header-title'>Calculations</h4>
-                        <span className='report-creation-select'>Select All</span>
+                        <span className='report-creation-select'>Select Default</span>
                     </div>
                 }
             </div>
