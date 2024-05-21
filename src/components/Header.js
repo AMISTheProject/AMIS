@@ -5,6 +5,7 @@ import { Notifications } from './Notifications';
 import logo from '../assets/images/amis-logo-off-trans.png';
 
 export const Header = ({role}) => {
+    const [roleAbbr, setRoleAbbr] = useState('PlEng');
     const [navItems, setNavItems] = useState(
         [
             {navName: 'Home', navRoute: '/'}, 
@@ -17,6 +18,7 @@ export const Header = ({role}) => {
     useEffect(() => {
         function dynamicComponentLoad() {
             if(role === 'business-services-organization') {
+                setRoleAbbr('BSO');
                 setNavItems(
                     [
                         {navName: 'Home', navRoute: '/'}, 
@@ -48,7 +50,7 @@ export const Header = ({role}) => {
             <div className='header-right-container'>
                 <Notifications className="notifications" hasNotificiations={true}/>
                 <div className='pfp-container'>
-                    <p className='pfp-text'>PlEng</p>
+                    <p className='pfp-text'>{roleAbbr}</p>
                 </div>
             </div>
         </div>
