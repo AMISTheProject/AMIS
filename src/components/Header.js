@@ -1,9 +1,35 @@
 import '../assets/style/styles.css';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Notifications } from './Notifications';
 import logo from '../assets/images/amis-logo.png';
 
-export const Header = () => {
+export const Header = ({role}) => {
+    const [navItems, setNavItems] = useState(
+        [
+            {navName: 'Home', navRoute: '/'}, 
+            {navName: 'Reports', navRoute: '/reports'},
+            {navName: 'AUC', navRoute: '/auc'},
+            {navName: 'Drafts', navRoute: '/drafts'}
+        ]
+    );
+
+    useEffect(() => {
+        function dynamicComponentLoad() {
+            if(role === 'business-services-organization') {
+                setNavItems(
+                    [
+                        {navName: 'Home', navRoute: '/'}, 
+                        {navName: 'Approvals', navRoute: '/approvals'},
+                        {navName: 'Reports', navRoute: '/reports'},
+                    ]
+                );
+            }
+        }
+
+        dynamicComponentLoad();
+    }, []);
+
     return (
         <div className="header-container">
             <NavLink to="/">
@@ -11,10 +37,15 @@ export const Header = () => {
             </NavLink>
             <div className="nav-container">
                 <ul className="nav-list">
-                    <li><NavLink exact to="/" className="nav-item">Home</NavLink></li>
+                    {
+                        navItems.map((navItem, index) => (
+                            <li key={index}><NavLink to={navItem.navRoute} className="nav-item">{navItem.navName}</NavLink></li>
+                        ))
+                    }
+                    {/* <li><NavLink to="/" className="nav-item">Home</NavLink></li>
                     <li><NavLink to="/reports" className="nav-item">Reports</NavLink></li>
                     <li><NavLink to="/auc" className="nav-item">AUC</NavLink></li>
-                    <li><NavLink to="/drafts" className="nav-item">Drafts</NavLink></li>
+                    <li><NavLink to="/drafts" className="nav-item">Drafts</NavLink></li> */}
                 </ul>
             </div>
             <div className='header-right-container'>

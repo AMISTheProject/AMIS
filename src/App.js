@@ -10,6 +10,7 @@ import { NotificationsScreen } from './screens/NotificationsScreen';
 import { Login } from './components/Login';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import RoleContext, { RoleProvider } from './Context';
+import { Approvals } from './screens/Approvals';
 
 function App() {
   return (
@@ -40,6 +41,12 @@ function AppMain() {
     } else if(location.pathname == '/drafts') {
       setCurrentRoute('Drafts');
       setSubtitle('AUC History');
+    } else if(location.pathname == '/approvals') {
+      setCurrentRoute('Approvals');
+      setSubtitle('Submissions for Review');
+    } else if(location.pathname == '/notifications') {
+      setCurrentRoute('Notifications');
+      setSubtitle('Stay up to date');
     }
   }, [location.pathname]);
 
@@ -48,18 +55,19 @@ function AppMain() {
           {
             location.pathname != '/login' && (
               <>
-                <Header />
+                <Header className='app-header' role={role}/>
                 <PageTitle title={currentRoute} subtitle={subtitle}/>
               </>
             )
           }
           <Routes>
+            <Route path="/login" element={<Login />} />
             <Route path="/" element={<Dashboard role={role}/>} />
             <Route path="/reports" element={<AssetReports />} />
             <Route path="/auc" element={<AUC />} />
             <Route path="/drafts" element={<Drafts />} />
             <Route path="/notifications" element={<NotificationsScreen />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/approvals" element={<Approvals />} />
           </Routes>
         </div>
   );
