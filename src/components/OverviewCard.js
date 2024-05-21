@@ -1,7 +1,6 @@
 import '../assets/style/styles.css';
-import icon from '../assets/images/download.png'
 
-export const OverviewCard = ({number, desc}) => {
+export const OverviewCard = ({number, desc, icon}) => {
     return (
         <div className='overview-card-container'>
             <div className='overview-main-container'>

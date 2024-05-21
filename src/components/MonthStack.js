@@ -6,7 +6,7 @@ export const MonthStack = () => {
         <div className='month-stack-container'>
             <div className='month-stack-header'>
                 <h4 className='month-stack-title'>Month's Stack</h4>
-                <a href='/' className='month-stack-button'><span>Manage</span></a>
+               <span className='month-stack-button'>Manage</span>
             </div>
 
             <div className='month-stack-content'>

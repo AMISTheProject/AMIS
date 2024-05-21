@@ -10,6 +10,12 @@ import RoleContext from '../Context';
 import { QuartersBarChart } from '../components/QuartersBarChart';
 import { MonthStack } from '../components/MonthStack';
 import { NavLink } from 'react-router-dom'; 
+import message from '../assets/images/message.svg'
+import draft from '../assets/images/draft.svg'
+import modified from '../assets/images/modified.svg'
+import report from '../assets/images/report.svg'
+import shared from '../assets/images/share-black.svg'
+import download from '../assets/images/download.png'
 
 export const Dashboard = ({ role }) => {
     const { username } = useContext(RoleContext);
@@ -26,15 +32,15 @@ export const Dashboard = ({ role }) => {
         <>
             <h3 className='monthly-overview-title'>Monthly Overview</h3>
             <div className='monthly-overview-card-row'>
-                <OverviewCard number='4' desc='AUCs modified'/>
-                <OverviewCard number='2' desc='Custom reports'/>
-                <OverviewCard number='1' desc='Report shared'/>
+                <OverviewCard number='4' desc='AUCs modified' icon={modified}/>
+                <OverviewCard number='2' desc='Custom reports' icon={report}/>
+                <OverviewCard number='1' desc='Report shared' icon={shared}/>
             </div>
 
             <div className='monthly-overview-card-row'>
-                <OverviewCard number='3' desc='Draft forms'/>
-                <OverviewCard number='2' desc='Unread messages'/>
-                <OverviewCard number='7' desc='Downloads'/>
+                <OverviewCard number='3' desc='Draft forms' icon={draft}/>
+                <OverviewCard number='2' desc='Unread messages' icon={message}/>
+                <OverviewCard number='7' desc='Downloads' icon={download} />
             </div>
         </>
     );
@@ -57,12 +63,14 @@ export const Dashboard = ({ role }) => {
             if(role === 'business-services-organization') {
                 setSubtitle('Let’s secure plant’s proper workflow!');
                 setHeaderButton(
+                   <NavLink to="/approvals">
                     <PrimaryButton 
                         color='#fff' 
                         bgColor='#EB3131' 
                         className="dashboard-custom-report-button" 
                         text='Quickly Approve Data' 
                     />
+                    </NavLink>
                 );
                 setRightContainerContent(
                     <>

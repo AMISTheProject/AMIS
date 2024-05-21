@@ -2,7 +2,9 @@ import '../assets/style/styles.css';
 import { NotificationListRow } from '../components/NotificationListRow';
 import { Checkbox } from '../components/Checkbox';
 import bell from '../assets/images/notif.png';
-import share from '../assets/images/share.png';
+import share from '../assets/images/share-icon-gray.svg';
+import star from '../assets/images/star-icon.svg';
+import bin from '../assets/images/bin-icon.svg'
 import { ChipButton } from '../components/ChipButton';
 import React, { useState } from 'react';
 import { ToggleSwitch } from '../components/ToggleSwitch';
@@ -47,9 +49,9 @@ export const NotificationsScreen = () => {
 
             <div className='notifications-actions'>
                 <Checkbox value={allSelected} onChange={setAllSelected}/>
-                <ChipButton text={'Mark'} icon={share} />
+                <ChipButton text={'Mark'}  icon={star} />
                 <ChipButton text={'Share'} icon={share} />
-                <ChipButton text={'Delete'} icon={share} />
+                <ChipButton text={'Delete'} icon={bin} />
             </div>
 
             <div className='notifications-content'>
