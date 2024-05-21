@@ -1323,6 +1323,7 @@
 
 .notifications-title {
     font-weight: 500;
+    font-size: 28px;
 }
 
 .notifications-actions {
@@ -1513,4 +1514,10 @@
 
 .logo:hover {
     transform: rotate(90deg) scale(0.8);
+}
+
+.notifications-header-vbox {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
