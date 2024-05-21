@@ -1,13 +1,16 @@
 import '../assets/style/styles.css';
 import { Checkbox } from '../components/Checkbox';
 import { PrimaryButton } from '../components/PrimaryButton';
+import { NavLink } from 'react-router-dom'; 
 
 export const ReportCreation = () => {
     return (
         <div className='report-creation-container'>
             <div className='report-creation-header'>
                 <h4 className='report-creation-header-title'>Report Fields</h4>
-                <PrimaryButton bgColor='#EB3131' color='#fff' text='Create Report' />
+                <NavLink to='/reports'>
+                    <PrimaryButton bgColor='#EB3131' color='#fff' text='Create Report' />
+                </NavLink>
             </div>
 
             <div className='report-creation-actions'>

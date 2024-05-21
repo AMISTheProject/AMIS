@@ -9,15 +9,18 @@ import React, { useState, useEffect, useContext } from 'react';
 import RoleContext from '../Context';
 import { QuartersBarChart } from '../components/QuartersBarChart';
 import { MonthStack } from '../components/MonthStack';
+import { NavLink } from 'react-router-dom'; 
 
 export const Dashboard = ({ role }) => {
     const { username } = useContext(RoleContext);
     const [subtitle, setSubtitle] = useState('Time to make progress on our projects!');
     const [headerButton, setHeaderButton] = useState(
-        <PrimaryButton 
-            className="dashboard-custom-report-button" 
-            text='Quick custom report' 
-        />
+        <NavLink to='/report-creation'>
+            <PrimaryButton 
+                className="dashboard-custom-report-button" 
+                text='Quick custom report' 
+            />
+        </NavLink>
     );
     const [rightContainerContent, setRightContainerContent] = useState(
         <>
