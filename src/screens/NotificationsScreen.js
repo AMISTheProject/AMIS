@@ -5,7 +5,7 @@ import bell from '../assets/images/notif.png';
 import share from '../assets/images/share.png';
 import { ChipButton } from '../components/ChipButton';
 import React, { useState } from 'react';
-import {ToggleSwitch} from '../components/ToggleSwitch';
+import { ToggleSwitch } from '../components/ToggleSwitch';
 
 export const NotificationsScreen = () => {
     const [areNotifAllowed, setAreNotifAllowed] = useState(true);
@@ -35,7 +35,7 @@ export const NotificationsScreen = () => {
                     <div> 
                         <ToggleSwitch 
                                 isOn={value}
-                                onColor="#EF476F"
+                                onColor="#EB3131"
                                 handleToggle={() => setValue(!value)}/>
                     </div>
                     
