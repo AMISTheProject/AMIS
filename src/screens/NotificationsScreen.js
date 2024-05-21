@@ -5,10 +5,12 @@ import bell from '../assets/images/notif.png';
 import share from '../assets/images/share.png';
 import { ChipButton } from '../components/ChipButton';
 import React, { useState } from 'react';
+import {ToggleSwitch} from '../components/ToggleSwitch';
 
 export const NotificationsScreen = () => {
     const [areNotifAllowed, setAreNotifAllowed] = useState(true);
     const [allSelected, setAllSelected] = useState(false);
+    const [value, setValue] = useState(false);
 
     return (
         <div className='notifications-container'>
@@ -29,7 +31,14 @@ export const NotificationsScreen = () => {
                         <span className='notifications-perm-p'>Automatically send new notifications</span>
                     </div>
 
-                    <Checkbox value={areNotifAllowed} onChange={setAreNotifAllowed}/>
+                
+                    <div> 
+                        <ToggleSwitch 
+                                isOn={value}
+                                onColor="#EF476F"
+                                handleToggle={() => setValue(!value)}/>
+                    </div>
+                    
                 </div>
             </div>
 

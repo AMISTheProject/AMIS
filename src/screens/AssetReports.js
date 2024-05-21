@@ -1,6 +1,6 @@
 import '../assets/style/styles.css';
 import { ReportCard } from '../components/ReportCard';
-import groupIcon from '../assets/images/group-by-icon.png';
+import groupIcon from '../assets/images/group-icon.png';
 import navArrowIcon from '../assets/images/left-arrow-icon.png';
 import demoPdf from '../assets/images/pdf-image.png';
 
@@ -10,7 +10,7 @@ export const AssetReports = () => {
             <div className='reports-content-container'>
                 <div className="reports-title-container">
                     <h3 className='auc-sidebar-title'>Latest Reports</h3>
-                    <img src={groupIcon} alt='Group' width='25px' height='25px'/>
+                    <img src={groupIcon} class="auc-side-bar-group-icon" alt='Group' width='25px' height='25px'/>
                 </div>
 
                 <input className='asset-screen-input-field' id="search" name="search" placeholder='Search' />
