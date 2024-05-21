@@ -20,10 +20,7 @@ export const Login = () => {
     const [isHidden, setIsHidden] = useState(false);
 
     const options = [
-        { value: 'plant-manager', label: 'Plant Manager' },
         { value:'plant-engineer',label:'Plant Engineer'},
-        { value: 'finance-department', label: 'Finance Department' },
-        { value: 'continuous-improvement-lead', label: 'Continuous Improvement Lead' },
         { value: 'business-services-organization', label: 'Business Services Organization' }
     ]
 
