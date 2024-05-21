@@ -5,8 +5,6 @@ import { NavLink } from 'react-router-dom';
 import React, { useState, useEffect, useContext } from 'react';
 import RoleContext from '../Context';
 
-
-
 const plantEngineerReportFields = [
     'Acquisition Value',
     'Asset Super Number',
@@ -26,7 +24,7 @@ const plantEngineerReportFields = [
     'Depreciated Value',
     'Reason for extension',
     'Extension of useful life (months)'
-]
+];
 
 const bsoReportFields = [
     'Accumulated Depreciation - Machinery',
@@ -47,21 +45,26 @@ const bsoReportFields = [
     'Land',
     'Buildings',
     'Liabilities'
-    ];
+];
 
 export const ReportCreation = () => {
     const [fields, setFields] = useState(plantEngineerReportFields);
-    const { role, setRole } = useContext(RoleContext);
+    const [checkedFields, setCheckedFields] = useState({});
+    const { role } = useContext(RoleContext);
 
     useEffect(() => {
-        function dynamicComponentLoad() {
-            if(role === 'business-services-organization') {
-               setFields(bsoReportFields);
-            }
+        if(role === 'business-services-organization') {
+            setFields(bsoReportFields);
         }
-        dynamicComponentLoad();
-    }, []);
-    
+    }, [role]);
+
+    const handleCheckboxChange = (label, isChecked) => {
+        setCheckedFields(prevState => ({
+            ...prevState,
+            [label]: isChecked
+        }));
+    };
+
     return (
         <div className='report-creation-container'>
             <div className='report-creation-header'>
@@ -92,23 +95,27 @@ export const ReportCreation = () => {
 
             <div className='report-creation-content'>
                 <div className='report-creation-half'>
-
                     {
                         fields.slice(0, fields.length / 2).map((label, index) => (
                             <div key={index} className='report-creation-check-item'>
-                                <Checkbox />
+                                <Checkbox 
+                                    value={checkedFields[label] || false}
+                                    onChange={(isChecked) => handleCheckboxChange(label, isChecked)}
+                                />
                                 <span className='report-creation-check-text'>{label}</span>
                             </div>
                         ))
                     }
-                    
                 </div>
 
                 <div className='report-creation-half'>
                     {
                         fields.slice(fields.length / 2, fields.length).map((label, index) => (
                             <div key={index} className='report-creation-check-item'>
-                                <Checkbox />
+                                <Checkbox 
+                                    value={checkedFields[label] || false}
+                                    onChange={(isChecked) => handleCheckboxChange(label, isChecked)}
+                                />
                                 <span className='report-creation-check-text'>{label}</span>
                             </div>
                         ))
