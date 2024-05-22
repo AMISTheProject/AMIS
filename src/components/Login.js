@@ -83,7 +83,7 @@ export const Login = () => {
                 </div>
 
                 <div className='login-footer-container'>
-                    <a href='/login' className='forgot-password-link'>Forgot your password?</a>
+                    <a href='/' className='forgot-password-link'>Forgot your password?</a>
                 </div>
             </div>
 
