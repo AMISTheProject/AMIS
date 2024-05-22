@@ -22,9 +22,9 @@ export const AssetReports = () => {
                
 
                 <div className='reports-card-container'>
-                    <ReportCard title='May Asset Report' date='30 Apr 2024' user='Plant Manager' icon={pdfIcon} active={true}/>
-                    <ReportCard title='April Asset Report' date='30 Mar 2024' user='Plant Manager' icon={pdfIcon} />
-                    <ReportCard title='March Asset Report' date='28 Feb 2024' user='Plant Manager' icon={pdfIcon} />
+                    <ReportCard title='May Asset Report' date='28 May 2024' user='Plant Manager' icon={pdfIcon} active={true}/>
+                    <ReportCard title='April Asset Report' date='30 Apr 2024' user='Plant Manager' icon={pdfIcon} />
+                    <ReportCard title='March Asset Report' date='28 Mar 2024' user='Plant Manager' icon={pdfIcon} />
 
                 </div>
             </div>

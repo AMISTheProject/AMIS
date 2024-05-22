@@ -56,7 +56,7 @@ export const Drafts = () => {
                         className="draft-box" 
                         title={`Assets Under Construction Report ${index + 1}`} 
                         reason='Saved due to inaction' 
-                        time='13:45' 
+                        time={`13:4${8-index}`} 
                         firstChecked={isChecked}
                         onCheckboxChange={(checked) => handleItemCheckboxChange(index, checked)}
                     />

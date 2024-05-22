@@ -1547,3 +1547,16 @@
     align-items: center;
     gap: 30px;
 }
+
+.primary-button:hover {
+    opacity: 0.7;
+}
+
+.primary-button:active {
+    opacity: 0.5;
+}
+
+.calendar-item.current {
+    background-color: red;
+    color: white; /* Adjust text color for better visibility */
+  }

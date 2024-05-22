@@ -18,6 +18,7 @@ export const Login = () => {
     const { role, setRole } = useContext(RoleContext);
     const { username, setUsername } = useContext(RoleContext);
     const [isHidden, setIsHidden] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
 
     const options = [
         { value:'plant-engineer',label:'Plant Engineer'},
@@ -30,7 +31,7 @@ export const Login = () => {
             setUsername(loginUsername);
             navigate('/dashboard');
         } else {
-            console.log('Please enter your credentials.');
+            setErrorMessage('Please enter your credentials.');
         }
     };
 
@@ -70,7 +71,13 @@ export const Login = () => {
                         <p>Remember me</p>
                     </div>
 
+                    {
+                        errorMessage && (
+                            <p style={{color: "#eb3131", fontSize: "15px", textAlign: "center"}}>{errorMessage}</p>
+                        )
+                    }
                     <div onClick={handleLogin}>
+
                         <PrimaryButton text={'Log In'} color='#fff' bgColor='#EB3131' className='login-button' />
                     </div>
                 </div>

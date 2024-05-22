@@ -1,8 +1,13 @@
 import '../assets/style/styles.css';
 import { PrimaryButton } from '../components/PrimaryButton';
 import { DropdownList } from '../components/DropdownList';
+import React, {useState} from 'react';
 
 export const AssetScreen = ({title}) => {
+
+    const [category, setCategory] = useState(false);
+    const [asn, setAsn] = useState(false); // asset super number
+
 
     const categoryOptions= [
         { value: 'main-asset', label: 'Main Asset' },
@@ -101,6 +106,8 @@ export const AssetScreen = ({title}) => {
                             <DropdownList 
                                 options = {categoryOptions}
                                 placeholder={'Choose a category (M/I)'}
+                                startValue = {category}
+                                onChange={setCategory}
                             />
                         </div>
 
@@ -129,6 +136,8 @@ export const AssetScreen = ({title}) => {
                             <DropdownList
                                 options={assetSuperNumbers}
                                 placeholder={'Must be 10 digits'}
+                                startValue = {asn}
+                                onChange={setAsn}
                             />
                         </div>
 

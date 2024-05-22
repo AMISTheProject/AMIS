@@ -55,10 +55,10 @@ export const NotificationsScreen = () => {
             </div>
 
             <div className='notifications-content'>
-                <NotificationListRow user='AMIS' title='April Report' headerCheckboxStatus={allSelected}/>
-                <NotificationListRow user='Takis' title='Quarter Report' headerCheckboxStatus={allSelected}/>
-                <NotificationListRow user='BSO' title='Assets Under Creation' headerCheckboxStatus={allSelected}/>
-                <NotificationListRow user='AMIS' title='Extraction Completed' headerCheckboxStatus={allSelected}/>
+                <NotificationListRow user='AMIS' title='April Report' headerCheckboxStatus={allSelected} desc="Dear Plant Engineer, This email is to inform you that the montly equipment report is now available in the AMIS system. The report provides a summary of key metrics for all monitored equipment..."/>
+                <NotificationListRow user='Takis' title='Quarter Report' headerCheckboxStatus={allSelected} desc="Thank you for bringing your asset report to my attention. I appreciate your proactive approach to using AMIS for in-depth analysis. The focus on CAPEX Management is valuable, and I believe it can definitely help us with financial resource planning."/>
+                <NotificationListRow user='BSO' title='Assets Under Creation' headerCheckboxStatus={allSelected} desc="AUC Data Received for April. Waiting for your next registries. Best Regards, BSO Team."/>
+                <NotificationListRow user='AMIS' title='Extraction Completed' headerCheckboxStatus={allSelected} desc="May's Customized Asset Report Extracted Succesfully."/>
             </div>
         </div>
     );

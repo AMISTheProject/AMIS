@@ -3,7 +3,7 @@ import { PrimaryButton } from '../components/PrimaryButton';
 import { Calendar } from '../components/Calendar';
 import { ReportCard } from '../components/ReportCard';
 import { OverviewCard } from '../components/OverviewCard';
-import pdfIcon from '../assets/images/PDF.png';
+import pdfIcon from '../assets/images/pdf-icon-legit.png';
 import excelIcon from '../assets/images/excel-icon.png';
 import React, { useState, useEffect, useContext } from 'react';
 import RoleContext from '../Context';
@@ -53,7 +53,7 @@ export const Dashboard = ({ role }) => {
                 <ReportCard title='Capex Tracking Tool' date='1 May 2024' user='AMIS' icon={excelIcon}/>
             </div>
             <div className='plant-files-card-container'>
-                <ReportCard title='Capex Tracking Tool' date='1 May 2024' user='AMIS' icon={pdfIcon}/>
+                <ReportCard title='Business Investment Plan' date='3 January 2024' user='AMIS' icon={pdfIcon}/>
             </div>
         </>
     )

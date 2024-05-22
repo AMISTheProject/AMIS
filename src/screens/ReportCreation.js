@@ -15,15 +15,15 @@ const plantEngineerReportFields = [
     'WBS Description',
     'Project Engineer',
     'Cost Center',
-    'Currency',
-    'Book Value',
-    'Purchase Order (PO)',
-    'PO Line',
-    'PO Line Description',
-    'Estimated completion date based on RFA',
-    'Depreciated Value',
-    'Reason for extension',
-    'Extension of useful life (months)'
+    'Remaining useful life (per asset)',
+    'Total depreciated amount (cumulatively)',
+    'Number of total AUCs',
+    'Assets with small remaining lifespan',
+    'Assets by PO (grouping)',
+    'Assets by WBS (grouping)',
+    'Accumulated extensions of useful life',
+    'Listing of different asset types',
+    'Number of assets capitalized this period'
 ];
 
 const bsoReportFields = [

@@ -32,7 +32,7 @@ export const NotificationListRow = ({user, title, desc, headerCheckboxStatus}) =
 
             <div className='notif-details-container' hidden={!isExpanded}>
                 <p className='notif-details-text'>
-                    Hello Solon! The automated Report for April is ready... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse semper, arcu quis scelerisque laoreet, metus purus commodo velit, sed imperdiet tellus tellus vel tortor. Praesent eget fermentum arcu, vitae mattis odio. Maecenas semper porta tempor. Nam elementum gravida felis ac semper. Sed vitae pretium arcu.
+                    {desc}
                 </p>
             </div>
         </div>

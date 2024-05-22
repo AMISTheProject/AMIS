@@ -60,7 +60,7 @@ function AppMain() {
       setSubtitle('Stay up to date');
     } else if(location.pathname == '/asset-approval') {
       setCurrentRoute('Asset Aprovals');
-      setSubtitle('Asset Under Construction 1');
+      setSubtitle('Asset Under Construction');
     } else if(location.pathname == '/report-creation') {
       setCurrentRoute('Report Creation');
       setSubtitle('');
